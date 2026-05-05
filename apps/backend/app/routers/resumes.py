@@ -758,6 +758,7 @@ async def _improve_preview_flow(
                 raw_skill_plan,
                 original_resume_data=original_resume_data,
                 job_keywords=job_keywords,
+                job_description=job["content"],
             )
             accepted_targets = verified_skill_plan.get("accepted", [])
             if isinstance(accepted_targets, list):
@@ -788,6 +789,7 @@ async def _improve_preview_flow(
         improved_data, applied_changes, rejected_changes = apply_diffs(
             original=original_resume_data,
             changes=diff_result.changes,
+            allowed_skill_targets=skill_targets,
         )
 
         diff_warnings = verify_diff_result(

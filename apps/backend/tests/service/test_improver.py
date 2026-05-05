@@ -241,16 +241,19 @@ class TestSkillTargetPlanning:
             "Kubernetes",
         ]
         assert result["strategy_notes"] == "Prioritize platform keywords"
+        assert mock_llm.call_args.kwargs["schema_type"] == "diff"
 
     def test_verify_skill_target_plan_allows_existing_and_jd_skills(
         self,
         sample_resume,
         sample_job_keywords,
+        sample_job_description,
     ):
         raw_plan = {
             "target_skills": [
                 {"skill": "Python", "reason": "Already in resume"},
                 {"skill": "Kubernetes", "reason": "JD required"},
+                {"skill": "CI/CD", "reason": "Generic keyword, not skill field"},
                 {"skill": "BananaDB", "reason": "Unsupported"},
             ]
         }
@@ -258,11 +261,12 @@ class TestSkillTargetPlanning:
             raw_plan,
             original_resume_data=sample_resume,
             job_keywords=sample_job_keywords,
+            job_description=sample_job_description,
         )
         accepted_skills = [item["skill"] for item in verified["accepted"]]
         rejected_skills = [item["skill"] for item in verified["rejected"]]
         assert accepted_skills == ["Python", "Kubernetes"]
-        assert rejected_skills == ["BananaDB"]
+        assert rejected_skills == ["CI/CD", "BananaDB"]
         assert verified["accepted"][0]["source"] == "existing"
         assert verified["accepted"][1]["source"] == "jd_added"
 

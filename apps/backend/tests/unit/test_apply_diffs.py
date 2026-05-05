@@ -118,10 +118,33 @@ class TestApplyDiffsAddSkill:
                 reason="JD-required skill approved by verifier",
             )
         ]
-        result, applied, rejected = apply_diffs(sample_resume, changes)
+        result, applied, rejected = apply_diffs(
+            sample_resume,
+            changes,
+            allowed_skill_targets=[{"skill": "Kubernetes"}],
+        )
         assert len(applied) == 1
         assert len(rejected) == 0
         assert "Kubernetes" in result["additional"]["technicalSkills"]
+
+    def test_add_skill_rejects_unverified_skill(self, sample_resume):
+        changes = [
+            ResumeChange(
+                path="additional.technicalSkills",
+                action="add_skill",
+                original=None,
+                value="BananaDB",
+                reason="Unsupported skill should not be appended",
+            )
+        ]
+        result, applied, rejected = apply_diffs(
+            sample_resume,
+            changes,
+            allowed_skill_targets=[{"skill": "Kubernetes"}],
+        )
+        assert len(applied) == 0
+        assert len(rejected) == 1
+        assert "BananaDB" not in result["additional"]["technicalSkills"]
 
     def test_add_skill_rejects_duplicate_case_insensitive(self, sample_resume):
         changes = [
@@ -133,7 +156,11 @@ class TestApplyDiffsAddSkill:
                 reason="Duplicate skill should not be appended",
             )
         ]
-        result, applied, rejected = apply_diffs(sample_resume, changes)
+        result, applied, rejected = apply_diffs(
+            sample_resume,
+            changes,
+            allowed_skill_targets=[{"skill": "Python"}],
+        )
         assert len(applied) == 0
         assert len(rejected) == 1
         assert result["additional"]["technicalSkills"].count("Python") == 1
@@ -148,7 +175,11 @@ class TestApplyDiffsAddSkill:
                 reason="Skill additions are only allowed in technical skills",
             )
         ]
-        result, applied, rejected = apply_diffs(sample_resume, changes)
+        result, applied, rejected = apply_diffs(
+            sample_resume,
+            changes,
+            allowed_skill_targets=[{"skill": "Kubernetes"}],
+        )
         assert len(applied) == 0
         assert len(rejected) == 1
         assert "Kubernetes" not in result["additional"]["technicalSkills"]

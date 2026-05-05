@@ -53,15 +53,22 @@ def _normalize_skill_key(skill: str) -> str:
     return re.sub(r"\s+", " ", skill.strip()).casefold()
 
 
-def _extract_jd_skill_keys(job_keywords: dict[str, Any]) -> set[str]:
-    """Extract normalized skills and keywords that are explicitly in the JD."""
+def _extract_jd_skill_keys(
+    job_keywords: dict[str, Any],
+    job_description: str,
+) -> set[str]:
+    """Extract normalized required/preferred skills present in the raw JD."""
     keys: set[str] = set()
-    for field in ("required_skills", "preferred_skills", "keywords"):
+    for field in ("required_skills", "preferred_skills"):
         values = job_keywords.get(field, [])
         if not isinstance(values, list):
             continue
         for value in values:
-            if isinstance(value, str) and value.strip():
+            if (
+                isinstance(value, str)
+                and value.strip()
+                and _keyword_in_text(value, job_description)
+            ):
                 keys.add(_normalize_skill_key(value))
     return keys
 
@@ -128,7 +135,10 @@ async def refine_resume(
         alignment = validate_master_alignment(
             current,
             master_resume,
-            allowed_new_skills=_extract_jd_skill_keys(job_keywords),
+            allowed_new_skills=_extract_jd_skill_keys(
+                job_keywords,
+                job_description,
+            ),
         )
         if not alignment.is_aligned:
             # Count critical violations

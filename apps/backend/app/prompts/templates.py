@@ -458,7 +458,7 @@ DIFF_IMPROVE_PROMPT = """Given this resume and job description, output a JSON ob
 
 RULES:
 1. Only modify content — never change names, companies, dates, institutions, or degrees
-2. Do not invent skills, metrics, or achievements not supported by the original resume text
+2. Do not invent metrics or achievements not supported by the original resume text
 3. Do not add new work entries, education entries, or project entries
 4. {strategy_instruction}
 5. Each change MUST include the original text (copied exactly) so it can be verified
@@ -466,7 +466,7 @@ RULES:
 7. Generate all new text in {output_language}
 8. Do not use em dash characters
 9. Keep changes minimal and targeted — do not rewrite content that already aligns well
-10. Use skill additions only from the verified skill targets below
+10. Exception to rule 2: you may add a skill only if it appears in the verified skill targets below
 11. Improve work and project bullets around the verified skill targets when the original text supports that alignment
 
 PATHS you can target:

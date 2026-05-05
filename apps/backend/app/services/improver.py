@@ -214,6 +214,7 @@ def _verify_original_matches(actual: Any, expected: str | None) -> bool:
 def apply_diffs(
     original: dict[str, Any],
     changes: list[ResumeChange],
+    allowed_skill_targets: list[dict[str, Any] | str] | None = None,
 ) -> tuple[dict[str, Any], list[ResumeChange], list[ResumeChange]]:
     """Apply verified diffs to original resume.
 
@@ -228,6 +229,7 @@ def apply_diffs(
     Args:
         original: The original resume data (ResumeData-compatible dict)
         changes: List of changes from the LLM
+        allowed_skill_targets: Verified skill targets allowed for add_skill actions
 
     Returns:
         (result_dict, applied_changes, rejected_changes)
@@ -235,6 +237,7 @@ def apply_diffs(
     result = copy.deepcopy(original)
     applied: list[ResumeChange] = []
     rejected: list[ResumeChange] = []
+    allowed_skill_keys = _build_allowed_skill_target_keys(allowed_skill_targets)
 
     for change in changes:
         path = change.path
@@ -342,6 +345,10 @@ def apply_diffs(
             }
             if new_skill.casefold() in existing:
                 logger.info("Diff rejected (duplicate skill): %s", new_skill)
+                rejected.append(change)
+                continue
+            if _normalize_skill_key(new_skill) not in allowed_skill_keys:
+                logger.info("Diff rejected (skill not in verified targets): %s", new_skill)
                 rejected.append(change)
                 continue
             actual_value.append(new_skill)
@@ -642,10 +649,38 @@ def _extract_skill_index(items: Any) -> dict[str, str]:
     return index
 
 
-def _extract_jd_skill_index(job_keywords: dict[str, Any]) -> dict[str, str]:
-    """Build a normalized index of JD-approved skills and keywords."""
+def _skill_mentioned_in_text(skill: str, text: str) -> bool:
+    """Return True when a skill phrase appears as a whole term in text."""
+    escaped = re.escape(skill.strip().lower())
+    if not escaped:
+        return False
+    return bool(re.search(rf"(?<!\w){escaped}(?!\w)", text.lower()))
+
+
+def _build_allowed_skill_target_keys(
+    allowed_skill_targets: list[dict[str, Any] | str] | None,
+) -> set[str]:
+    """Build normalized keys for skills approved by the planning verifier."""
+    keys: set[str] = set()
+    for target in allowed_skill_targets or []:
+        if isinstance(target, str):
+            skill = target
+        elif isinstance(target, dict):
+            skill = str(target.get("skill", ""))
+        else:
+            continue
+        if skill.strip():
+            keys.add(_normalize_skill_key(skill))
+    return keys
+
+
+def _extract_jd_skill_index(
+    job_keywords: dict[str, Any],
+    job_description: str | None = None,
+) -> dict[str, str]:
+    """Build a normalized index of explicit JD skills."""
     index: dict[str, str] = {}
-    for field in ("required_skills", "preferred_skills", "keywords"):
+    for field in ("required_skills", "preferred_skills"):
         values = job_keywords.get(field, [])
         if not isinstance(values, list):
             continue
@@ -653,35 +688,37 @@ def _extract_jd_skill_index(job_keywords: dict[str, Any]) -> dict[str, str]:
             if not isinstance(value, str):
                 continue
             skill = value.strip()
-            if skill:
+            if skill and (
+                job_description is None
+                or _skill_mentioned_in_text(skill, job_description)
+            ):
                 index.setdefault(_normalize_skill_key(skill), skill)
     return index
 
 
 def _skill_present_in_resume_text(skill: str, resume_data: dict[str, Any]) -> bool:
     """Return True when a skill phrase already appears in the resume text."""
-    text = json.dumps(resume_data, ensure_ascii=False).lower()
-    normalized = re.escape(skill.strip().lower())
-    if not normalized:
-        return False
-    return bool(re.search(rf"(?<!\w){normalized}(?!\w)", text))
+    text = json.dumps(resume_data, ensure_ascii=False)
+    return _skill_mentioned_in_text(skill, text)
 
 
 def verify_skill_target_plan(
     raw_plan: dict[str, Any],
     original_resume_data: dict[str, Any],
     job_keywords: dict[str, Any],
+    job_description: str | None = None,
 ) -> dict[str, list[dict[str, str]] | str]:
     """Filter and classify LLM-proposed skill targets before diff generation.
 
-    Existing resume skills are accepted as low-risk targets. JD skills and
-    keywords are accepted as explicit JD-added targets for user review. Other
-    skills are accepted only when they already appear in the resume text.
+    Existing resume skills are accepted as low-risk targets. Required and
+    preferred JD skills are accepted as explicit JD-added targets for user
+    review. Other skills are accepted only when they already appear in the
+    resume text.
     """
     original_skills = _extract_skill_index(
         original_resume_data.get("additional", {}).get("technicalSkills", [])
     )
-    jd_skills = _extract_jd_skill_index(job_keywords)
+    jd_skills = _extract_jd_skill_index(job_keywords, job_description)
     raw_targets = raw_plan.get("target_skills", [])
     accepted: list[dict[str, str]] = []
     rejected: list[dict[str, str]] = []
@@ -772,7 +809,7 @@ async def generate_skill_target_plan(
             "target_skills and strategy_notes."
         ),
         max_tokens=2048,
-        schema_type="skill_plan",
+        schema_type="diff",
     )
 
     raw_targets = result.get("target_skills", [])
