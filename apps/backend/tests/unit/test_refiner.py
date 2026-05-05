@@ -149,6 +149,39 @@ class TestValidateMasterAlignment:
         )
         assert "Kubernetes" in result.refined_data["additional"]["technicalSkills"]
 
+    @pytest.mark.parametrize(
+        ("skill", "job_description"),
+        [
+            ("C++", "Experience with C++ is required for systems tooling."),
+            ("C#", "Experience with C# is required for .NET services."),
+        ],
+    )
+    async def test_refiner_allows_required_punctuated_skill_present_in_job_description(
+        self,
+        sample_resume,
+        master_resume,
+        skill,
+        job_description,
+    ):
+        tailored = copy.deepcopy(sample_resume)
+        tailored["additional"]["technicalSkills"].append(skill)
+        result = await refine_resume(
+            initial_tailored=tailored,
+            master_resume=master_resume,
+            job_description=job_description,
+            job_keywords={
+                "required_skills": [skill],
+                "preferred_skills": [],
+                "keywords": [],
+            },
+            config=RefinementConfig(
+                enable_keyword_injection=False,
+                enable_ai_phrase_removal=False,
+                enable_master_alignment_check=True,
+            ),
+        )
+        assert skill in result.refined_data["additional"]["technicalSkills"]
+
     def test_detects_fabricated_certification(self, sample_resume, master_resume):
         tailored = copy.deepcopy(sample_resume)
         tailored["additional"]["certificationsTraining"].append("Google Cloud Professional")

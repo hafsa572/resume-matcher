@@ -36,15 +36,15 @@ MIN_TRUNCATION_WARNING_LENGTH = 1500
 
 
 def _keyword_in_text(keyword: str, text: str) -> bool:
-    """Check if keyword exists as a whole word in text.
+    """Check if keyword exists as a whole term in text.
 
-    SVC-010: Uses word boundaries instead of substring matching to avoid
+    SVC-010: Uses term boundaries instead of substring matching to avoid
     false positives like 'python' matching 'pythonic' or 'go' matching 'going'.
     """
-    # Escape special regex characters in keyword
-    escaped = re.escape(keyword.lower())
-    # Use word boundaries
-    pattern = rf"\b{escaped}\b"
+    escaped = re.escape(keyword.strip().lower())
+    if not escaped:
+        return False
+    pattern = rf"(?<!\w){escaped}(?!\w)"
     return bool(re.search(pattern, text.lower()))
 
 
