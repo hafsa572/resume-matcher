@@ -85,6 +85,21 @@ class TestValidateMasterAlignment:
         assert len(skill_violations) >= 1
         assert any("kubernetes" in v.value.lower() for v in skill_violations)
 
+    def test_allows_jd_added_skill_when_explicitly_allowed(self, sample_resume, master_resume):
+        tailored = copy.deepcopy(sample_resume)
+        tailored["additional"]["technicalSkills"].append("Kubernetes")
+        report = validate_master_alignment(
+            tailored,
+            master_resume,
+            allowed_new_skills={"Kubernetes"},
+        )
+        critical_skill_violations = [
+            v
+            for v in report.violations
+            if "skill" in v.violation_type and v.severity == "critical"
+        ]
+        assert critical_skill_violations == []
+
     def test_detects_fabricated_certification(self, sample_resume, master_resume):
         tailored = copy.deepcopy(sample_resume)
         tailored["additional"]["certificationsTraining"].append("Google Cloud Professional")
