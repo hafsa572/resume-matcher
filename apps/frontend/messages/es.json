@@ -500,6 +500,8 @@
     "selectResume": "Seleccionar Currículum",
     "pasteJobDescription": "Pegar Descripción del Trabajo",
     "pasteJobDescriptionBelow": "Pega la descripción del trabajo abajo",
+    "jobTitle": "Título del Puesto",
+    "jobTitlePlaceholder": "Ingrese el título del puesto (opcional)",
     "jobDescriptionPlaceholder": "Pega la descripción del trabajo aquí...",
     "promptLabel": "Intensidad de ajuste",
     "promptDescription": "Elige qué tanto alinear tu currículum con la descripción del puesto.",
@@ -564,6 +566,7 @@
       "apiKeyError": "Tu clave API no funciona. Revísala en Configuración.",
       "rateLimit": "Se alcanzó el límite de tasa. Espera aproximadamente un minuto e inténtalo de nuevo.",
       "failedToGenerate": "No se pudo generar el currículum. Revisa tu clave API en Configuración e inténtalo de nuevo.",
+      "timeout": "La solicitud agotó el tiempo. Intenta con una descripción más corta o revisa tu conexión.",
       "failedToPreview": "No se pudo previsualizar el currículum. Revisa tu clave API en Configuración e inténtalo de nuevo.",
       "failedToConfirm": "No se pudieron aplicar los cambios. Inténtalo de nuevo."
     }
