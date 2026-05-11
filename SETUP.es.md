@@ -488,7 +488,7 @@ Resume-Matcher/
 ¿Atascado? Estas son tus opciones:
 
 - **Comunidad de Discord:** [dsc.gg/resume-matcher](https://dsc.gg/resume-matcher) - Comunidad activa para preguntas y discusiones
-- **Issues de GitHub:** [Abrir un issue](https://github.com/srbhr/Resume-Matcher/issues) para bugs o solicitudes de funcionalidades
+- **Issues de GitHub:** [Abrir un issue](https://github.com/hafsa572/resume-matcher/issues) para bugs o solicitudes de funcionalidades
 - **Documentación:** revisa la carpeta [docs/agent/](docs/agent/) para guías detalladas
 
 ### Documentación útil
@@ -501,5 +501,5 @@ Resume-Matcher/
 
 ---
 
-¡Feliz creación de currículums! Si Resume Matcher te resulta útil, considera [darle una estrella al repo](https://github.com/srbhr/Resume-Matcher) y [unirte a nuestro Discord](https://dsc.gg/resume-matcher).
+¡Feliz creación de currículums! Si Resume Matcher te resulta útil, considera [darle una estrella al repo](https://github.com/hafsa572/resume-matcher).
 
