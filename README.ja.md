@@ -18,14 +18,9 @@
 
 <div align="center">
 
-![Stars](https://img.shields.io/github/stars/hafsa572/resume-matcher?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8)
-![Apache 2.0](https://img.shields.io/github/license/hafsa572/resume-matcher?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8) ![Forks](https://img.shields.io/github/forks/hafsa572/resume-matcher?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8) ![version](https://img.shields.io/badge/Version-1.2%20Nightvision%20-FFF?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8)
 
-[![Discord](https://img.shields.io/discord/1122069176962531400?labelColor=F0F0E8&logo=discord&logoColor=1d4ed8&style=for-the-badge&color=1d4ed8)](https://dsc.gg/resume-matcher) [![Website](https://img.shields.io/badge/website-Resume%20Matcher-FFF?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8)](https://resumematcher.fyi) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Resume%20Matcher-FFF?labelColor=F0F0E8&logo=LinkedIn&style=for-the-badge&color=1d4ed8)](https://www.linkedin.com/company/resume-matcher/)
 
-<a href="https://trendshift.io/repositories/565" target="_blank"><img src="https://trendshift.io/api/badge/repositories/565" alt="srbhr%2FResume-Matcher | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
-![Vercel OSS Program](https://vercel.com/oss/program-badge.svg)
 
 </div>
 
@@ -48,11 +43,9 @@ Resume Matcher は、まず「マスター履歴書」を作り、それを各�
 
 ### コミュニティ
 
-[![Discord](assets/resume_matcher_discord.png)](https://dsc.gg/resume-matcher)
 
 ディスカッション、要望、サポートは [Discord](https://dsc.gg/resume-matcher) へ。
 
-[![LinkedIn](assets/resume_matcher_linkedin.png)](https://www.linkedin.com/company/resume-matcher/)
 
 最新情報は [LinkedIn](https://www.linkedin.com/company/resume-matcher/) でも発信しています。
 
@@ -261,4 +254,3 @@ docker run hafsa572/resume-matcher:latest
 
 ## Resume Matcher は [Vercel Open Source Program](https://vercel.com/oss) の一部です
 
-![Vercel OSS Program](https://vercel.com/oss/program-badge.svg)
