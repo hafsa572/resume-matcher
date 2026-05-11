@@ -232,25 +232,6 @@ docker run hafsa572/resume-matcher:latest
 
 如果你希望参与未来规划的功能，可以先看看路线图。若你有建议或功能需求，欢迎在 GitHub 提 Issue，并在我们的 [Discord](https://dsc.gg/resume-matcher) 讨论。
 
-<a id="contributors"></a>
-
-## 贡献者
-
-![Contributors](assets/contributors.png)
-
-<a href="https://github.com/hafsa572/resume-matcher/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=hafsa572/resume-matcher" />
-</a>
-
-<br/>
-
-<details>
-  <summary><kbd>Star 历史</kbd></summary>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hafsa572/resume-matcher&theme=dark&type=Date">
-    <img width="100%" src="https://api.star-history.com/svg?repos=hafsa572/resume-matcher&theme=dark&type=Date">
-  </picture>
-</details>
 
 ## Resume Matcher 是 [Vercel Open Source Program](https://vercel.com/oss) 的一部分
 

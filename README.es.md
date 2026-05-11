@@ -234,23 +234,6 @@ docker run hafsa572/resume-matcher:latest
 
 Echa un vistazo al roadmap si te gustaría trabajar en las características que están planeadas para el futuro. Si tienes alguna sugerencia o solicitud de características, no dudes en abrir un *issue* en GitHub y discutirlo en nuestro servidor de [Discord](https://dsc.gg/resume-matcher).
 
-<a id="contributors"></a>
-
-## Colaboradores
-
-![Colaboradores](assets/contributors.png)
-
-<a href="https://github.com/hafsa572/resume-matcher/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=hafsa572/resume-matcher" />
-</a>
-
-<details>
-  <summary><kbd>Historial de Estrellas</kbd></summary>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hafsa572/resume-matcher&theme=dark&type=Date">
-    <img width="100%" src="https://api.star-history.com/svg?repos=hafsa572/resume-matcher&theme=dark&type=Date">
-  </picture>
-</details>
 
 ## Resume Matcher es parte del [Vercel Open Source Program](https://vercel.com/oss)
 

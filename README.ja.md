@@ -232,25 +232,6 @@ docker run hafsa572/resume-matcher:latest
 
 ロードマップも参考にしてください。提案や機能要望があれば、GitHub で Issue を作成し、[Discord](https://dsc.gg/resume-matcher) でも議論できます。
 
-<a id="contributors"></a>
-
-## コントリビューター
-
-![Contributors](assets/contributors.png)
-
-<a href="https://github.com/hafsa572/resume-matcher/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=hafsa572/resume-matcher" />
-</a>
-
-<br/>
-
-<details>
-  <summary><kbd>Star の推移</kbd></summary>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hafsa572/resume-matcher&theme=dark&type=Date">
-    <img width="100%" src="https://api.star-history.com/svg?repos=hafsa572/resume-matcher&theme=dark&type=Date">
-  </picture>
-</details>
 
 ## Resume Matcher は [Vercel Open Source Program](https://vercel.com/oss) の一部です
 
