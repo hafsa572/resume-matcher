@@ -202,6 +202,6 @@ Pull Requests & Issues are not just welcomed, they're celebrated! Let's create t
 
 🔔 Share your thoughts in our [Discussions & Announcements](https://github.com/hafsa572/resume-matcher/discussions).
 
-🚀 Explore and improve our [Landing Page](https://github.com/srbhr/website-for-resume-matcher). PRs always welcome!
+🚀 Explore and improve our [Landing Page](https://github.com/hafsa572/website-for-resume-matcher). PRs always welcome!
 
 📚 Contribute to the [Resume Matcher Docs](https://github.com/hafsa572/resume-matcher-Docs) and help people get started with using the software.
