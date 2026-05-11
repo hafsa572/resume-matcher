@@ -63,7 +63,7 @@ Si ya estás familiarizado con herramientas de desarrollo y quieres arrancar rá
 
 ```bash
 # 1. Clona el repositorio
-git clone https://github.com/srbhr/Resume-Matcher.git
+git clone https://github.com/hafsa572/resume-matcher.git
 cd Resume-Matcher
 
 # 2. Inicia el backend (Terminal 1)
@@ -93,7 +93,7 @@ Abre **<http://localhost:3000>** en el navegador y listo.
 Primero, trae el código a tu máquina:
 
 ```bash
-git clone https://github.com/srbhr/Resume-Matcher.git
+git clone https://github.com/hafsa572/resume-matcher.git
 cd Resume-Matcher
 ```
 

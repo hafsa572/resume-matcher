@@ -63,7 +63,7 @@ pip install uv
 
 ```bash
 # 1. リポジトリをクローン
-git clone https://github.com/srbhr/Resume-Matcher.git
+git clone https://github.com/hafsa572/resume-matcher.git
 cd Resume-Matcher
 
 # 2. バックエンド起動（ターミナル 1）
@@ -93,7 +93,7 @@ npm run dev                  # 開発サーバを起動
 まずはコードを取得します：
 
 ```bash
-git clone https://github.com/srbhr/Resume-Matcher.git
+git clone https://github.com/hafsa572/resume-matcher.git
 cd Resume-Matcher
 ```
 
@@ -488,7 +488,7 @@ Resume-Matcher/
 困ったときは次を参照してください：
 
 - **Discord:** [dsc.gg/resume-matcher](https://dsc.gg/resume-matcher) - 質問・議論に活発です
-- **GitHub Issues:** [Issue を作成](https://github.com/srbhr/Resume-Matcher/issues)（バグ報告や要望）
+- **GitHub Issues:** [Issue を作成](https://github.com/hafsa572/resume-matcher/issues)（バグ報告や要望）
 - **ドキュメント:** 詳細は [docs/agent/](docs/agent/) を参照
 
 ### 参考ドキュメント
@@ -501,5 +501,5 @@ Resume-Matcher/
 
 ---
 
-楽しい履歴書づくりを！Resume Matcher が役立ったら、[リポジトリに Star](https://github.com/srbhr/Resume-Matcher) と [Discord 参加](https://dsc.gg/resume-matcher) をぜひ。
+楽しい履歴書づくりを！Resume Matcher が役立ったら、[リポジトリに Star](https://github.com/hafsa572/resume-matcher) と [Discord 参加](https://dsc.gg/resume-matcher) をぜひ。
 

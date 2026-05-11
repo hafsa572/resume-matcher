@@ -132,7 +132,7 @@ Fastest for MacOS, WSL and Ubuntu users:
 
 ```bash
 # Clone the repository
-git clone https://github.com/srbhr/Resume-Matcher.git
+git clone https://github.com/hafsa572/resume-matcher.git
 cd Resume-Matcher
 
 # Backend (Terminal 1)

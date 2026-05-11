@@ -20,8 +20,8 @@ Esperamos convertir esto en **el VS Code para crear currículums**.
 
 <div align="center">
 
-![Stars](https://img.shields.io/github/stars/srbhr/Resume-Matcher?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8)
-![Apache 2.0](https://img.shields.io/github/license/srbhr/Resume-Matcher?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8) ![Forks](https://img.shields.io/github/forks/srbhr/Resume-Matcher?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8) ![version](https://img.shields.io/badge/Version-1.2%20Nightvision-FFF?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8)
+![Stars](https://img.shields.io/github/stars/hafsa572/resume-matcher?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8)
+![Apache 2.0](https://img.shields.io/github/license/hafsa572/resume-matcher?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8) ![Forks](https://img.shields.io/github/forks/hafsa572/resume-matcher?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8) ![version](https://img.shields.io/badge/Version-1.2%20Nightvision-FFF?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8)
 
 [![Discord](https://img.shields.io/discord/1122069176962531400?labelColor=F0F0E8&logo=discord&logoColor=1d4ed8&style=for-the-badge&color=1d4ed8)](https://dsc.gg/resume-matcher) [![Website](https://img.shields.io/badge/website-Resume%20Matcher-FFF?labelColor=F0F0E8&style=for-the-badge&color=1d4ed8)](https://resumematcher.fyi) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Resume%20Matcher-FFF?labelColor=F0F0E8&logo=LinkedIn&style=for-the-badge&color=1d4ed8)](https://www.linkedin.com/company/resume-matcher/)
 
@@ -183,7 +183,7 @@ La forma más rápida (MacOS, WSL y Ubuntu):
 
 ```bash
 # Clona el repositorio
-git clone https://github.com/srbhr/Resume-Matcher.git
+git clone https://github.com/hafsa572/resume-matcher.git
 cd Resume-Matcher
 
 # Backend (Terminal 1)
@@ -214,9 +214,9 @@ Abre **<http://localhost:3000>** y configura tu proveedor de IA en Settings.
 ### Despliegue con Docker
 
 ```bash
-docker pull srbhr/resume-matcher:latest
+docker pull hafsa572/resume-matcher:latest
 
-docker run srbhr/resume-matcher:latest
+docker run hafsa572/resume-matcher:latest
 ```
 
 <!-- Nota: La documentación de Docker está pendiente. Por ahora, usa docker-compose.yml como referencia -->
@@ -247,15 +247,15 @@ Echa un vistazo al roadmap si te gustaría trabajar en las características que 
 
 ![Colaboradores](assets/contributors.png)
 
-<a href="https://github.com/srbhr/Resume-Matcher/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=srbhr/Resume-Matcher" />
+<a href="https://github.com/hafsa572/resume-matcher/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=hafsa572/resume-matcher" />
 </a>
 
 <details>
   <summary><kbd>Historial de Estrellas</kbd></summary>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=srbhr/resume-matcher&theme=dark&type=Date">
-    <img width="100%" src="https://api.star-history.com/svg?repos=srbhr/resume-matcher&theme=dark&type=Date">
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hafsa572/resume-matcher&theme=dark&type=Date">
+    <img width="100%" src="https://api.star-history.com/svg?repos=hafsa572/resume-matcher&theme=dark&type=Date">
   </picture>
 </details>
 

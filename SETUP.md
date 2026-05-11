@@ -61,7 +61,7 @@ If you're familiar with development tools and want to get running quickly:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/srbhr/Resume-Matcher.git
+git clone https://github.com/hafsa572/resume-matcher.git
 cd Resume-Matcher
 
 # 2. Start the backend (Terminal 1)
@@ -89,7 +89,7 @@ Open your browser to **<http://localhost:3000>** and you're ready to go!
 First, get the code on your machine:
 
 ```bash
-git clone https://github.com/srbhr/Resume-Matcher.git
+git clone https://github.com/hafsa572/resume-matcher.git
 cd Resume-Matcher
 ```
 
@@ -547,7 +547,7 @@ Resume-Matcher/
 Stuck? Here are your options:
 
 - **Discord Community:** [dsc.gg/resume-matcher](https://dsc.gg/resume-matcher) - Active community for questions and discussions
-- **GitHub Issues:** [Open an issue](https://github.com/srbhr/Resume-Matcher/issues) for bugs or feature requests
+- **GitHub Issues:** [Open an issue](https://github.com/hafsa572/resume-matcher/issues) for bugs or feature requests
 - **Documentation:** Check the [docs/agent/](docs/agent/) folder for detailed guides
 
 ### Useful Documentation
@@ -560,4 +560,4 @@ Stuck? Here are your options:
 
 ---
 
-Happy resume building! If you find Resume Matcher helpful, consider [starring the repo](https://github.com/srbhr/Resume-Matcher) and [joining our Discord](https://dsc.gg/resume-matcher).
+Happy resume building! If you find Resume Matcher helpful, consider [starring the repo](https://github.com/hafsa572/resume-matcher) and [joining our Discord](https://dsc.gg/resume-matcher).

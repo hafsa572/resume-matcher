@@ -63,7 +63,7 @@ pip install uv
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/srbhr/Resume-Matcher.git
+git clone https://github.com/hafsa572/resume-matcher.git
 cd Resume-Matcher
 
 # 2. 启动后端（终端 1）
@@ -93,7 +93,7 @@ npm run dev                  # 启动开发服务器
 先把代码拉到本机：
 
 ```bash
-git clone https://github.com/srbhr/Resume-Matcher.git
+git clone https://github.com/hafsa572/resume-matcher.git
 cd Resume-Matcher
 ```
 
@@ -488,7 +488,7 @@ Resume-Matcher/
 如果遇到问题，可以从以下渠道获得支持：
 
 - **Discord 社区：** [dsc.gg/resume-matcher](https://dsc.gg/resume-matcher) - 提问与讨论都很活跃
-- **GitHub Issues：** [提交 Issue](https://github.com/srbhr/Resume-Matcher/issues) 反馈 bug 或提出需求
+- **GitHub Issues：** [提交 Issue](https://github.com/hafsa572/resume-matcher/issues) 反馈 bug 或提出需求
 - **项目文档：** 查看 [docs/agent/](docs/agent/) 获取更详细的指南
 
 ### 推荐文档
@@ -501,5 +501,5 @@ Resume-Matcher/
 
 ---
 
-祝你简历制作顺利！如果 Resume Matcher 对你有帮助，欢迎 [给仓库点个 Star](https://github.com/srbhr/Resume-Matcher)，以及 [加入我们的 Discord](https://dsc.gg/resume-matcher)。
+祝你简历制作顺利！如果 Resume Matcher 对你有帮助，欢迎 [给仓库点个 Star](https://github.com/hafsa572/resume-matcher)，以及 [加入我们的 Discord](https://dsc.gg/resume-matcher)。
 

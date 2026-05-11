@@ -1,6 +1,6 @@
 # Contributing to Resume-Matcher on GitHub
 
-Thank you for taking the time to contribute to [Resume-Matcher](https://github.com/srbhr/Resume-Matcher).
+Thank you for taking the time to contribute to [Resume-Matcher](https://github.com/hafsa572/resume-matcher).
 
 We want you to have a great experience making your first contribution.
 
@@ -42,7 +42,7 @@ Follow these steps to set up the environment and run the application.
 
 ## How to install
 
-1. Fork the repository [here](https://github.com/srbhr/Resume-Matcher/fork).
+1. Fork the repository [here](https://github.com/hafsa572/resume-matcher/fork).
 
 2. Clone the forked repository.
 
@@ -198,10 +198,10 @@ Pull Requests & Issues are not just welcomed, they're celebrated! Let's create t
 
 💡 Spot a problem? Create an issue!
 
-👩‍💻 Dive in and help resolve existing [issues](https://github.com/srbhr/Resume-Matcher/issues).
+👩‍💻 Dive in and help resolve existing [issues](https://github.com/hafsa572/resume-matcher/issues).
 
-🔔 Share your thoughts in our [Discussions & Announcements](https://github.com/srbhr/Resume-Matcher/discussions).
+🔔 Share your thoughts in our [Discussions & Announcements](https://github.com/hafsa572/resume-matcher/discussions).
 
 🚀 Explore and improve our [Landing Page](https://github.com/srbhr/website-for-resume-matcher). PRs always welcome!
 
-📚 Contribute to the [Resume Matcher Docs](https://github.com/srbhr/Resume-Matcher-Docs) and help people get started with using the software.
+📚 Contribute to the [Resume Matcher Docs](https://github.com/hafsa572/resume-matcher-Docs) and help people get started with using the software.
