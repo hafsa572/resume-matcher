@@ -6,7 +6,6 @@
 
 [�𝚎𝚋𝚜𝚒𝚝𝚎](https://resumematcher.fyi) ✦ [𝙷𝚘𝚠 𝚝𝚘 𝙸𝚗𝚜𝚝𝚊𝚕𝚕](https://resumematcher.fyi/docs/installation)
 
-**English** | [Español](README.es.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
 Create tailored resumes for each job application with AI-powered suggestions. Works locally with Ollama or connect to your favorite LLM provider via API.
 
